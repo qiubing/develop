@@ -1,0 +1,6 @@
+struct task_struct
+struct skb_buff
+struct net_device
+struct sched_class{调度器类数据结构，rt_sched_class和fair_sched_class分别是实时调度器和完全公平调度器。}
+struct rq{就绪队列，核心调度器用于关于活动进程的数据结构。}
+
