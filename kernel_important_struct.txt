@@ -1,0 +1,12 @@
+struct task_struct
+struct skb_buff
+struct net_device
+struct sched_class{调度器类数据结构，rt_sched_class和fair_sched_class分别是实时调度器和完全公平调度器。}
+struct rq{就绪队列，核心调度器用于关于活动进程的数据结构。}
+struct sched_entity{调度实体，调度器操作的对象。}
+struct load_weight{负荷权重，实时进程是普通进程的两倍，空闲进程权重最小，set_load_weight}
+struct cfs_rq {完全公平就绪队列；}
+struct rt_prio_array{实时优先级数组，具有相同优先级的实时进程保存在一个链表中}
+struct rt_rq{实时进程就绪队列}
+struct thread_info{特定体系结构的实例，}
+
