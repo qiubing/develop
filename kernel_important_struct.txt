@@ -14,3 +14,9 @@ struct thread_info{特定体系结构的实例，}
 内存管理
 struct pg_data_t{用于表示结点的基本元素，每个节点关联到一个处理器。}
 strcut zone{描述内存区域}
+struct page{页帧，对内存中的每个页都会创建一个struct page实例，与体系结构无关｝
+页表项的数据结构｛pgd_t用于全局目录项，pud_t用于上层页目录项，pmd_t用于中间
+页目录项，pte_t用于直接页表项｝
+struct node_active_region{活动内存区，使用add_active_range()函数注册。}  
+struct bootmem_data{bootmem分配器用于启动过程中内存分配的结构}    
+     

@@ -1,1 +1,13 @@
 struct socket{套接口代表通信链路的一端，存储了该端通信所有与通信有关的信息。}
+struct proto_ops{proto_ops结构完成的是从协议无关的套接口层到协议相关的传输层转换，}
+struct proto{将传输层映射到网络层，}
+struct sock_alloc{由socket结构和inode结构两部分组成，因此可以通过套接口定位到i节点，或是通过i节点定位到套接口}
+struct msghdr{描述发送和接收数据的结构}
+struct sock_common{传输控制块信息的最小集合}
+struct sock｛比较通用的网络层描述块，构成传输控制块基础，与具体的协议族无关｝
+struct inet_sock｛比较通用的IPv4协议族描述块，包含IPv4协议族基础传输层，即UDP、TCP以及原始传输控制块共有的信息｝
+struct inet_connection_sock{支持面向连接特性的描述块，构成IPv4协议族TCP控制块的基础，在inet_sock的结构的基础上加入支持连接的特性}
+struct tcp_sock{TCP传输控制块，支持完整的TCP特性，维护TCP连接维护的所有结点信息}
+struct inet_timewait_sock{支持面向连接特性的TCP_TIME_WAIT状态的描述，是构成tcp_timewait_sock的基础}
+struct tcp_timewait_sock{TCP_TIME_WAIT状态的描述块}
+struct udp_sock{UDP传输控制块}

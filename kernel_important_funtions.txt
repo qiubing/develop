@@ -1,0 +1,19 @@
+1.函数名: ioctl
+头文件：#include<sys/ioctl.h>
+功 能: 控制I/O设备 ，提供了一种获得设备信息和向设备发送控制参数的手段。用于向设备发控制和配置命令 ，有些命令需要控制参数，这些数据是不能用read / write 读写的,称为Out-of-band数据。也就是说,read / write 读写的数据是in-band数据,是I/O操作的主体，而ioctl 命令传送的是控制信息,其中的数据是辅助的数据。
+用 法: int ioctl(int handle, int cmd,[int *argdx, int argcx]);
+返回值：成功为0，出错为-1
+int ioctl( int fd, int request, .../* void *arg */ ) 详解
+第三个参数总是一个指针，但指针的类型依赖于request 参数。
+ioctl函数是文件结构中的一个属性分量，就是说如果你的驱动程序提供了对ioctl的支持，用户就能在用户程序中使用ioctl函数控制设备的I/O通道。
+
+2.memset函数
+函数原型：void *memset(void *s, int ch, size_t n);
+功能：将s所指向的某一块内存中的每个字节的内容全部设置为ch指定的ASCII值， 块的大小由第三个参数指定，这个函数通常为新申请的内存做初始化工作， 其返回值为指向S的指针。
+memset：作用是在一段内存块中填充某个给定的值，它是对较大的结构体或数组进行清零操作的一种最快方法。
+
+3.memcpy函数
+void *memcpy(void *dest, const void *src, size_t n);
+功能：从源src所指的内存地址的起始位置开始拷贝n个字节到目标dest所指的内存地址的起始位置中。
+返回值：函数返回dest的值
+如果目标数组destin本身已有数据，执行memcpy（）后，将覆盖原有数据（最多覆盖n）。如果要追加数据，则每次执行memcpy后，要将目标数组地址增加到你要追加数据的地址。
