@@ -18,5 +18,7 @@ struct page{页帧，对内存中的每个页都会创建一个struct page实例
 页表项的数据结构｛pgd_t用于全局目录项，pud_t用于上层页目录项，pmd_t用于中间
 页目录项，pte_t用于直接页表项｝
 struct node_active_region{活动内存区，使用add_active_range()函数注册。}  
-struct bootmem_data{bootmem分配器用于启动过程中内存分配的结构}    
-     
+struct bootmem_data{bootmem分配器用于启动过程中内存分配的结构}  
+struct free_area{一个辅助数据结构}  
+struct vm_struct{内核管理虚拟内存中vmalloc区域，都对应于该内存中的一个该结构实例}
+struct page_address_map{该结构用于创建page到virtual地址的映射 }

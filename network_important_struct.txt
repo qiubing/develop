@@ -11,3 +11,10 @@ struct tcp_sock{TCP传输控制块，支持完整的TCP特性，维护TCP连接�
 struct inet_timewait_sock{支持面向连接特性的TCP_TIME_WAIT状态的描述，是构成tcp_timewait_sock的基础}
 struct tcp_timewait_sock{TCP_TIME_WAIT状态的描述块}
 struct udp_sock{UDP传输控制块}
+struct udp_skb_cb{UDP私有控制块，为了区分传统和轻量级UDP，轻量级UDP增加了这样一个UDP私有模块}
+
+套接字地址：
+struct sockaddr_in{ ipv4套接字地址结构,其中struct in_addr为32位IPv4地址}
+struct sockaddr_in6{IPv6套接字地址结构，其中struct in6_addr为128位IPv6地址}
+struct sockaddr{ 通用套接字地址结构}
+struct sockaddr_storage{新的通用套接字地址结构}
